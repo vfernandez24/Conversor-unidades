@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <!--* Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="menu">
+            <button class="active" id="btn-l" onclick=longitud_active()>LONGITUD</button>
+            <button id="btn-m" onclick=masa_active()>MASA</button>
+            <button id="btn-t" onclick=temperatura_active()>TIEMPO</button>
+        </div>
+
+        <!-- * CONVERSOR LONGITUD -->
+        <div id="longitud" class="conversor active longitud">
+            <h1>Transformador unidades de longitud</h1>
+            <form>
+                <input class="input-text" type="number" name="value-user" id="value-inicial--longitud">
+                <div class="container_select">
+                    <select name="select" id="unidad-inicial--longitud">
+                        <option value="nm">Nanómetros</option>
+                        <option value="micrones">Micrones</option>
+                        <option value="mm">Milímetros</option>
+                        <option value="cm">Centímetros</option>
+                        <option selected value="m">Metros</option>
+                        <option value="km">Kilómetros</option>
+                        <option value="in">Pulgadas</option>
+                        <option value="ft">Pies</option>
+                        <option value="yd">Yardas</option>
+                        <option value="mi">Milla</option>
+                        <option value="miNau">Milla Naútica</option>
+                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1ABC9C"><path d="M686-450H160v-60h526L438-758l42-42 320 320-320 320-42-42 248-248Z"/></svg>
+                    <select name="select" id="unidad-final--longitud">
+                        <option value="nm">Nanómetros</option>
+                        <option value="micrones">Micrones</option>
+                        <option value="mm">Milímetros</option>
+                        <option selected value="cm">Centímetros</option>
+                        <option value="m">Metros</option>
+                        <option value="km">Kilómetros</option>
+                        <option value="in">Pulgadas</option>
+                        <option value="ft">Pies</option>
+                        <option value="yd">Yardas</option>
+                        <option value="mi">Milla</option>
+                        <option value="miNau">Milla Naútica</option>
+                    </select>
+                </div>
+                <div class="button" onclick=operar_longitud()>Transformar</div>
+                <p onclick=copy() class="input-text" id="value-final--longitud"></p>
+            </form>
+        </div>
+
+        <!-- * CONVERSOR MASA -->
+        <div id="masa" class="conversor masa">
+            <h1>Transformador unidades de masa</h1>
+            <form>
+                <input class="input-text" type="number" name="value-user" id="value-inicial--masa">
+                <div class="container_select">
+                    <select name="select" id="unidad-inicial--masa">
+                        <option value="microgramo">Microgramo</option>
+                        <option value="mg">Miligramo</option>
+                        <option selected value="g">Gramo</option>
+                        <option value="kg">Kilogramo</option>
+                        <option value="onzas">Onzas</option>
+                        <option value="libras">Libras</option>
+                        <option value="stone">Stone</option>
+                        <option value="ton">Tonelada</option>
+                        <option value="tonCor">Toneladas Cortas (EE UU)</option>
+                        <option value="tonLar">Toneladas Largas (UK)</option>
+                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1ABC9C"><path d="M686-450H160v-60h526L438-758l42-42 320 320-320 320-42-42 248-248Z"/></svg>
+                    <select name="select" id="unidad-final--masa">
+                        <option value="microgramo">Microgramo</option>
+                        <option value="mg">Miligramo</option>
+                        <option value="g">Gramo</option>
+                        <option selected value="kg">Kilogramo</option>
+                        <option value="onzas">Onzas</option>
+                        <option value="libras">Libras</option>
+                        <option value="stone">Stone</option>
+                        <option value="ton">Tonelada</option>
+                        <option value="tonCor">Toneladas Cortas (EE UU)</option>
+                        <option value="tonLar">Toneladas Largas (UK)</option>
+                    </select>
+                </div>
+                <div class="button" onclick=operar_masa()>Transformar</div>
+                <p class="input-text" type="number" name="value-user" id="value-final--masa"></p>
+            </form>
+        </div>
+
+        <!-- * CONVERSOR TEMPERATURA -->
+        <div id="temperatura" class="conversor temperatura">
+            <h1>Transformador unidades de tiempo</h1>
+            <form>
+                <input class="input-text" type="number" name="value-user" id="value-inicial--temperatura">
+                <div class="container_select">
+                    <select name="select" id="unidad-inicial--temperatura">
+                        <option value="nanosegundo">Nanosegundos</option>
+                        <option value="microsegundo">Microsegundos</option>
+                        <option value="milisegundo">Milisegundos</option>
+                        <option selected value="seg">Segundos</option>
+                        <option value="min">Minutos</option>
+                        <option value="hora">Horas</option>
+                        <option value="dia">Días</option>
+                        <option value="sem">Semanas</option>
+                        <option value="mes">Meses</option>
+                        <option value="año">Años</option>
+                        <option value="decada">Decadas</option>
+                        <option value="siglo">Siglos</option>
+                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#1ABC9C"><path d="M686-450H160v-60h526L438-758l42-42 320 320-320 320-42-42 248-248Z"/></svg>
+                    <select name="select" id="unidad-final--temperatura">
+                        <option value="microsegundo">Microsegundos</option>
+                        <option value="milisegundo">Milisegundos</option>
+                        <option value="seg">Segundos</option>
+                        <option value="min">Minutos</option>
+                        <option selected value="hora">Horas</option>
+                        <option value="dia">Días</option>
+                        <option value="sem">Semanas</option>
+                        <option value="mes">Meses</option>
+                        <option value="año">Años</option>
+                        <option value="decada">Decadas</option>
+                        <option value="siglo">Siglos</option>
+                    </select>
+                </div>
+                <div class="button" onclick=operar_temp()>Transformar</div>
+                <p class="input-text" type="number" name="value-user" id="value-final--temperatura"></p>
+            </form>
+        </div>
+
+    </div>
+
+    <!--* Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/longitud.js"></script>
+    <script src="js/masa.js"></script>
+    <script src="js/temp.js"></script>
+</body>
+</html>
